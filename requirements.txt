@@ -1,0 +1,10 @@
+matplotlib>=3.2.1
+numpy>=1.18.2
+cvxpy
+tqdm>=4.45.0
+pandas
+scikit-learn
+seaborn
+wandb==0.12.21
+plotly
+torch_geometric
