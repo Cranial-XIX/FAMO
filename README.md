@@ -2,12 +2,16 @@
 
 Official implementation of **FAMO** optimizer for multitask learning.
 
+One of the grand enduring goals of AI is to create generalist agents that can learn multiple different tasks from diverse data via multitask learning (MTL). However, gradient descent (GD) on the average loss across all tasks may yield poor multitask performance due to severe under-optimization of certain tasks. Previous approaches that manipulate task gradients for a more balanced loss decrease require storing and computing all task gradients ($\mathcal{O}(K)$ space and time where K is the number of tasks), limiting their use in large-scale scenarios. In this work, we introduce Fast Adaptive Multitask Optimization (FAMO), a dynamic weighting method that decreases task losses in a balanced way using $\mathcal{O}(1)$ space and time. We conduct an extensive set of experiments covering multi-task supervised and reinforcement learning problems. Our results indicate that FAMO achieves comparable or superior performance to state-of-the-art gradient manipulation techniques while offering significant improvements in space and computational efficiency.
+
+---
+
 <p align="center"> 
     <img src="https://github.com/Cranial-XIX/famo-dev/blob/main/misc/fig.png" width="800">
 </p>
 
 ## I. FAMO Example Usage
-For the convenience of potential users of FAMO, we provide a simple example in ```famo.py``` so that users can easily adapt FAMO to their applications. Check the file and simply run
+For the convenience of potential users of FAMO, we provide a simple example in ```famo.py``` so that users can easily adapt FAMO to their applications. The code requires installation of ```torch```, which can be installed via the setup in the next section. Check the file and simply run
 ```
 python famo.py
 ```
