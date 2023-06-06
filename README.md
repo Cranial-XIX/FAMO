@@ -7,10 +7,17 @@ One of the grand enduring goals of AI is to create generalist agents that can le
 ---
 
 <p align="center"> 
-    <img src="https://github.com/Cranial-XIX/famo-dev/blob/main/misc/fig.png" width="800">
+    <img src="https://github.com/Cranial-XIX/FAMO/blob/main/misc/fig.png" width="800">
 </p>
 
 **Top left**: The loss landscape, and individual task losses of a toy 2-task learning problem (★ represents the minimum of task losses). **Top right**: the runtime of different MTL methods for 50000 steps. Bottom: the loss trajectories of different MTL methods. ADAM fails in 1 out of 5 runs to reach the Pareto front due to CG. **FAMO** decreases task losses in a balanced way and is the only method matching the $\mathcal{O}(1)$ space/time complexity of ADAM.
+
+---
+
+<p align="center"> 
+    <img src="https://github.com/Cranial-XIX/FAMO/blob/main/misc/famo.png" width="800">
+</p>
+
 
 ## I. FAMO Example Usage
 For the convenience of potential users of FAMO, we provide a simple example in ```famo.py``` so that users can easily adapt FAMO to their applications. The code requires installation of ```torch```, which can be installed via the setup in the next section. Check the file and simply run
