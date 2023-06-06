@@ -84,9 +84,11 @@ if __name__ == "__main__":
 
     for it in range(100):
         loss = (Y - model(X)).pow(2).mean(0) # (K,)
-        if it > 0:
-            weight_opt.update(loss)
         opt.zero_grad()
         weight_opt.backward(loss)
         opt.step()
+        # update the task weighting
+        with torch.no_grad():
+            new_loss = (Y - model(X)).pow(2).mean(0) # (K,)
+            weight_opt.update(new_loss)
         print(f"[info] iter {it:3d} | avg loss {loss.mean().item():.4f}")
