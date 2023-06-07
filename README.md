@@ -2,7 +2,7 @@
 
 Official implementation of **FAMO** optimizer for multitask learning.
 
-One of the grand enduring goals of AI is to create generalist agents that can learn multiple different tasks from diverse data via multitask learning (MTL). However, gradient descent (GD) on the average loss across all tasks may yield poor multitask performance due to severe under-optimization of certain tasks. Previous approaches that manipulate task gradients for a more balanced loss decrease require storing and computing all task gradients ($\mathcal{O}(K)$ space and time where K is the number of tasks), limiting their use in large-scale scenarios. In this work, we introduce Fast Adaptive Multitask Optimization (FAMO), a dynamic weighting method that decreases task losses in a balanced way using $\mathcal{O}(1)$ space and time. We conduct an extensive set of experiments covering multi-task supervised and reinforcement learning problems. Our results indicate that FAMO achieves comparable or superior performance to state-of-the-art gradient manipulation techniques while offering significant improvements in space and computational efficiency.
+One of the grand enduring goals of AI is to create generalist agents that can learn multiple different tasks from diverse data via multitask learning (MTL). However, gradient descent (GD) on the average loss across all tasks may yield poor multitask performance due to severe under-optimization of certain tasks. Previous approaches that manipulate task gradients for a more balanced loss decrease require storing and computing all task gradients ($\mathcal{O}(K)$ space and time where K is the number of tasks), limiting their use in large-scale scenarios. In this work, we introduce Fast Adaptive Multitask Optimization (**FAMO**), a dynamic weighting method that decreases task losses in a balanced way using $\mathcal{O}(1)$ space and time. We conduct an extensive set of experiments covering multi-task supervised and reinforcement learning problems. Our results indicate that **FAMO** achieves comparable or superior performance to state-of-the-art gradient manipulation techniques while offering significant improvements in space and computational efficiency.
 
 ---
 
@@ -20,7 +20,7 @@ One of the grand enduring goals of AI is to create generalist agents that can le
 
 
 ## I. FAMO Example Usage
-For the convenience of potential users of FAMO, we provide a simple example in ```famo.py``` so that users can easily adapt FAMO to their applications. The code requires installation of ```torch```, which can be installed via the setup in the next section. Check the file and simply run
+For the convenience of potential users of **FAMO**, we provide a simple example in ```famo.py``` so that users can easily adapt **FAMO** to their applications. The code requires installation of ```torch```, which can be installed via the setup in the next section. Check the file and simply run
 ```
 python famo.py
 ```
@@ -79,7 +79,7 @@ To run experiments, go to the relevant folder with name ```EXP_NAME```
 cd experiment/EXP_NAME
 bash run.sh
 ```
-You can check the ```run.sh``` for details about training with FAMO.
+You can check the ```run.sh``` for details about training with **FAMO**.
 
 Following [NashMTL](https://github.com/AvivNavon/nash-mtl), we also support experiment tracking with **[Weights & Biases](https://wandb.ai/site)** with two additional parameters:
 ```bash
@@ -95,7 +95,7 @@ python trainer.py --method=X
 
 | Method (code name) | Paper (notes) |
 | :---: | :---: |
-| FAMO (`famo`) | [Fast Adaptive Multitask Optimization](https://arxiv.org/pdf/2202.01017v1.pdf) |
+| FAMO (`famo`) | [Fast Adaptive Multitask Optimization](https://arxiv.org/abs/2306.03792.pdf) |
 | Nash-MTL (`nashmtl`) | [Multi-Task Learning as a Bargaining Game](https://arxiv.org/pdf/2202.01017v1.pdf) |
 | CAGrad (`cagrad`) | [Conflict-Averse Gradient Descent for Multi-task Learning](https://arxiv.org/pdf/2110.14048.pdf) |
 | PCGrad (`pcgrad`) | [Gradient Surgery for Multi-Task Learning](https://arxiv.org/abs/2001.06782) |
@@ -125,9 +125,18 @@ Then follow the `run.sh` script to run experiments (We are still testing the res
 ## IV. Citation
 
 This repo is built upon [CAGrad](https://github.com/Cranial-XIX/CAGrad) and [NashMTL](https://github.com/AvivNavon/nash-mtl).
-If you find `FAMO` to be useful in your own research, please consider citing the following papers:
+If you find **FAMO** to be useful in your own research, please consider citing the following papers:
 
 ```bib
+@misc{liu2023famo,
+      title={FAMO: Fast Adaptive Multitask Optimization}, 
+      author={Bo Liu and Yihao Feng and Peter Stone and Qiang Liu},
+      year={2023},
+      eprint={2306.03792},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
 @article{liu2021conflict,
   title={Conflict-Averse Gradient Descent for Multi-task Learning},
   author={Liu, Bo and Liu, Xingchao and Jin, Xiaojie and Stone, Peter and Liu, Qiang},
