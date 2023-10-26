@@ -1,6 +1,6 @@
 # FAMO: Fast Adaptive Multitask Optimization
 
-Official implementation of the **FAMO** optimizer for multitask learning. [[Paper]](https://arxiv.org/pdf/2306.03792.pdf)
+Official implementation of the **FAMO** optimizer for multitask learning (NeurIPS 2023). [[Paper]](https://arxiv.org/pdf/2306.03792.pdf)
 
 One of the grand enduring goals of AI is to create generalist agents that can learn multiple different tasks from diverse data via multitask learning (MTL). However, gradient descent (GD) on the average loss across all tasks may yield poor multitask performance due to severe under-optimization of certain tasks. Previous approaches that manipulate task gradients for a more balanced loss decrease require storing and computing all task gradients ($\mathcal{O}(K)$ space and time where K is the number of tasks), limiting their use in large-scale scenarios. In this work, we introduce Fast Adaptive Multitask Optimization (**FAMO**), a dynamic weighting method that decreases task losses in a balanced way using $\mathcal{O}(1)$ space and time. We conduct an extensive set of experiments covering multi-task supervised and reinforcement learning problems. Our results indicate that **FAMO** achieves comparable or superior performance to state-of-the-art gradient manipulation techniques while offering significant improvements in space and computational efficiency.
 
