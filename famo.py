@@ -64,9 +64,9 @@ class FAMO:
         Loss, extra outputs
         """
         loss = self.get_weighted_loss(losses=losses)
+        loss.backward()
         if self.max_norm > 0 and shared_parameters is not None:
             torch.nn.utils.clip_grad_norm_(shared_parameters, self.max_norm)
-        loss.backward()
         return loss
 
 
