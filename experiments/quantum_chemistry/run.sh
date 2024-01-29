@@ -5,4 +5,4 @@ method=famo
 seed=42
 gamma=0.001
 
-python trainer.py --method=$method --seed=$seed --gamma=$gamma > trainlogs/famo-gamma$gamma-$seed.log 2>&1 &
+python trainer.py --method=$method --seed=$seed --gamma=$gamma --scale-y=True > trainlogs/famo-gamma$gamma-$seed.log 2>&1 &
