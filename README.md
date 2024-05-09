@@ -79,7 +79,7 @@ FAMO
 
 To run experiments, go to the relevant folder with name ```EXP_NAME```
 ```bash
-cd experiment/EXP_NAME
+cd experiments/EXP_NAME
 bash run.sh
 ```
 You can check the ```run.sh``` for details about training with **FAMO**.
